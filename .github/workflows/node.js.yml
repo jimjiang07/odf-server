@@ -24,6 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    # setup envs
     - name: TWILIO_ACCOUNT_SID
       uses: TickX/var-to-dotenv@v1.1.3
       with:
@@ -39,5 +41,12 @@ jobs:
       with:
         key: 'TWILIO_API_KEY_SECRET'
         value: ${{secrets.TWILIO_API_KEY_SECRET}}
+
+    # download the latest odf-client artifact
     - name: download odf-client
       run: ACTIONS_RUNTIME_TOKEN=${{ secrets.WORKFLOW_TOKEN }} TARGET_BRANCH=master .github/scripts/downloadClient.sh
+
+    - name: build
+      run: npm install
+
+    # deploy to heroku
