@@ -39,3 +39,5 @@ jobs:
       with:
         key: 'TWILIO_API_KEY_SECRET'
         value: ${{secrets.TWILIO_API_KEY_SECRET}}
+    - name: download odf-client
+      run: ACTIONS_RUNTIME_TOKEN=${{ secrets.WORKFLOW_TOKEN }} TARGET_BRANCH=master .github/scripts/downloadClient.sh
