@@ -28,14 +28,14 @@ jobs:
       uses: TickX/var-to-dotenv@v1.1.3
       with:
         key: 'TWILIO_ACCOUNT_SID'
-        value: ${{secrets.TWILIO_ACCOUNT_SID}
+        value: ${{secrets.TWILIO_ACCOUNT_SID}}
     - name: TWILIO_API_KEY_SID
       uses: TickX/var-to-dotenv@v1.1.3
       with:
         key: 'TWILIO_API_KEY_SID'
-        value: ${{secrets.TWILIO_API_KEY_SID}
+        value: ${{secrets.TWILIO_API_KEY_SID}}
     - name: TWILIO_API_KEY_SECRET
       uses: TickX/var-to-dotenv@v1.1.3
       with:
         key: 'TWILIO_API_KEY_SECRET'
-        value: ${{secrets.TWILIO_API_KEY_SECRET}
+        value: ${{secrets.TWILIO_API_KEY_SECRET}}
