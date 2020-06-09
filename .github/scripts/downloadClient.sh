@@ -40,5 +40,6 @@ rm -f .returned
 
 echo "Downloading artifact package from ${DOWNLOAD_URL}"
 call_curl "${DOWNLOAD_URL}" > odf-client.zip
-unzip odf-client.zip build
+unzip odf-client.zip -d build
+ls -l
 rm odf-client.zip
