@@ -46,9 +46,6 @@ jobs:
     - name: download odf-client
       run: ACTIONS_RUNTIME_TOKEN=${{ secrets.WORKFLOW_TOKEN }} TARGET_BRANCH=master .github/scripts/downloadClient.sh
 
-    - name: build
-      run: npm install
-
     # deploy to heroku
     - name: deploy
       uses: akhileshns/heroku-deploy@v3.0.4 # This is the action
@@ -56,3 +53,4 @@ jobs:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "odf" #Must be unique in Heroku
         heroku_email: "jim.jiang0727@gmail.com"
+        usedocker: true
